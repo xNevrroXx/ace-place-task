@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field {
+    width: 50vw;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    height: 3.2rem;
+}
+
+input.field::-webkit-outer-spin-button,
+input.field::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input.field[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

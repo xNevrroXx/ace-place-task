@@ -1,0 +1,75 @@
+.spinner {
+    stroke-linejoin: round;
+    stroke: rgb(var(--svg-color-rgb));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-name: svg-animation;
+}
+
+.spinner circle {
+    stroke-width: 5;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 280;
+    animation-name: circle-animation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1400ms;
+    animation-fill-mode: both;
+    transform-origin: 50% 50%;
+}
+
+@keyframes circle-animation {
+    0%,
+    25% {
+        stroke-dashoffset: 280;
+        transform: rotateZ(0);
+    }
+
+    50%,
+    75% {
+        stroke-dashoffset: 75;
+        transform: rotateZ(45deg);
+    }
+
+    100% {
+        stroke-dashoffset: 280;
+        transform: rotateZ(360deg);
+    }
+}
+
+/*.spinner {*/
+/*    animation: 2s linear infinite svg-animation;*/
+/*    max-width: 100px;*/
+/*}*/
+
+@keyframes svg-animation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
+/*!*!*!/ Circle styles*/
+/*   .spinner circle {*/
+/*       animation: 1.4s ease-in-out infinite both circle-animation;*/
+/*       display: block;*/
+/*       fill: transparent;*/
+/*       stroke: #2f3d4c;*/
+/*       stroke-linecap: round;*/
+/*       stroke-dasharray: 283;*/
+/*       stroke-dashoffset: 280;*/
+/*       stroke-width: 8px;*/
+/*       transform-origin: 50% 50%;*/
+/*   }*/
+
+/*!*!*!/ Circle animation*/
+/*@keyframes circle-animation {*/
+/*}*/
